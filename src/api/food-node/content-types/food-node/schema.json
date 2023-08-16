@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_nodes",
+  "info": {
+    "singularName": "food-node",
+    "pluralName": "food-nodes",
+    "displayName": "FoodNode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::food-node.food-node",
+      "inversedBy": "food_nodes"
+    },
+    "food_nodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::food-node.food-node",
+      "mappedBy": "parent"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    }
+  }
+}
